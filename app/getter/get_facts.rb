@@ -45,7 +45,7 @@ class GetFacts
                 puts "You saved the fact number: #{number}"
                 puts "#{@favorite_fact}"
             else
-                puts "No facts has been added."
+                puts "Wrong number. No facts has been added."
                 "none"
             end
         end
