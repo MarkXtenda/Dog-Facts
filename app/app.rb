@@ -1,16 +1,25 @@
 class App 
-    attr_reader :user, :username, :answer, :exit
+    attr_reader :user, :username, :answer, :exit, :stay
     def run
         welcome
-        login
-        wanna_see_fav
-        browse
+        while (@stay == 'y' && @exit != 'y')
+            login
+            wanna_see_fav
+            browse
+            exit
+        end
+        puts "Got it! See ya!"
     end
 
     private
 
+    def initialize 
+        @stay = 'y'
+        @answer = 'y'
+    end
+
     def welcome
-        puts "Yo wassup homie. Do you know some Dogie facts?"
+        puts "Welcome to the DogFact!\n Do you want to learn some Dog facts?"
         sleep(0.9)
         puts "Get it"
         sleep(0.6)
@@ -43,17 +52,18 @@ class App
     end
 
     def browse
-        while (@exit != 'y')
+        @answer = 'y'
+        while (@answer != 'n')
         puts "Browse for some facts? (y/n)"
         @answer = gets.chomp
-        while (@answer == "y")
-            load_fact
-            puts "Do you want to see your favorite facts? (y/n)"
-            @answer = gets.chomp
-            (@answer == 'y') ? load_favorites : nil
+
+        (@answer == "y") ? load_fact : nil
+
+        puts "Do you want to see your favorite facts? (y/n)"
+        @answer = gets.chomp
+
+        (@answer == 'y') ? load_favorites : nil
         end
-        exit
-    end
     end
 
     def load_fact
@@ -86,7 +96,7 @@ class App
                 @answer = 'n'
             end
             if (@user.facts.size != 0)
-                puts "Do you still want to delete one of your favorite facts?"
+                puts "Do you still want to delete one of your favorite facts? (y/n)"
                 @answer = gets.chomp
             end
         end
@@ -97,7 +107,19 @@ class App
     end
 
     def exit
-        puts "Do you want to exit?"
-        @exit = gets.chomp
+        @exit = "none"
+        while (@exit != 'y' && @exit != 'n')
+            puts "Do you want to exit? (y/n)"
+            @exit = gets.chomp
+            if (@exit == "n")
+                puts "Do you want to re-login? (y/n)"
+                @stay = gets.chomp
+            end
+            if (@exit != 'n' && @exit != 'y' && @stay != 'y')
+                puts "No such option exist."
+                puts "(@exit != 'y' && @exit != 'n'): #{(@exit != 'y' && @exit != 'n')}"
+                puts "@exit != 'n' && @exit != 'y' && @stay != 'y': #{@exit != 'n' && @exit != 'y' && @stay != 'y'}"
+            end
+        end
     end
 end

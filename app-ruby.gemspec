@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-# require_relative "lib/app/ruby/version"
+require_relative "lib/app/ruby/version"
 
 Gem::Specification.new do |spec|
   spec.name = "app-ruby"
+  spec.version = App::Ruby::VERSION
   spec.authors = ["MarkXtenda"]
   spec.email = ["mark.i2p.1998@gmail.com"]
 
