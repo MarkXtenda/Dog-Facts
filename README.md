@@ -2,11 +2,11 @@
 This CLI Ruby application fetches 5 random dog facts from the DogFacts API and allows the user to save any of these facts as their favourites for later reading.
 
 ## Features
-* Fetches 5 random dog facts from the DogFacts API
-* Allows users to save their favourite dog facts for later reading
 * Greets the user and asks them to log in (without a password)
 * Recognizes if the user already exists in the system and loads their saved facts
 * Creates a new user if one does not exist and saves their favourite facts for future reference
+* Fetches 5 random dog facts from the DogFacts API
+* Allows users to save their favourite dog facts for later reading
 
 ## Getting Started
 To get started, you need to have Ruby installed on your system. Clone this repository and navigate to the project directory. Run the following command in your terminal to install the required dependencies:
