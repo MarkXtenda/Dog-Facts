@@ -13,7 +13,7 @@ To get started, you need to have Ruby installed on your system. Clone this repos
 
 To start the application, run the following command in your terminal:
 
-`ruby bin/dogfacts`
+`ruby bin/console`
 
 ## Usage
 When the application starts, you will be prompted to enter your name. If you have used the application before, your previously saved facts will be loaded. If you are a new user, the application will create a new user profile for you.
