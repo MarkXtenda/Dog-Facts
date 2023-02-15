@@ -5,11 +5,9 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in app-ruby.gemspec
 # gemspec
 
-gem 'activerecord', '~> 5.2'
-gem "sinatra-activerecord"
-gem "sqlite3"
-gem "pry"
 gem 'require_all'
-gem "rails"
+gem 'sqlite3'
+gem 'activerecord'
 gem "rake", "~> 13.0"
+gem 'pry'
 
