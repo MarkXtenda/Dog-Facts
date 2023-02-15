@@ -11,7 +11,9 @@ This CLI Ruby application fetches 5 random dog facts from the DogFacts API and a
 ## Getting Started
 To get started, you need to have Ruby installed on your system. Clone this repository and navigate to the project directory. Run the following command in your terminal to install the required dependencies:
 
-To start the application, copy the repo and run the following command in your terminal:
+`bundle install`
+
+To start the application, run the following command in your terminal:
 
 `ruby bin/console`
 
