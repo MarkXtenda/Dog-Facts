@@ -18,13 +18,13 @@ To start the application, run the following command in your terminal:
 `ruby bin/console`
 
 ## Usage
-When the application starts, you will be prompted to enter your name. If you have used the application before, your previously saved facts will be loaded. If you are a new user, the application will create a new user profile for you.
-<!--
-You will then be presented with 5 random dog facts. To save any of these facts as your favourite, simply enter the number of the fact you want to save when prompted.
+When you start the application, you will be asked to enter your name. If you have used the application before, your previously saved facts will be loaded. If you are a new user, the application will create a new user profile for you.
 
-To view your favourite facts, select the "View Favourites" option from the main menu. From here, you can view, edit or delete your saved facts.
+You will then be presented with the option to "Browse for some facts? (y/n)". If you select "y", the application will display 5 random dog facts. To save any of these facts as your favorite, simply enter the number of the fact you want to save when prompted.
 
-To exit the application, select the "Exit" option from the main menu.-->
+To view your favorite facts, select "y" when prompted with the option "Do you want to see your favorite facts? (y/n)" from the main menu. From there, you can view, edit, or delete your saved facts.
+
+To exit the application, select "y" when prompted with the option "Do you want to exit? (y/n)" from the main menu.
 
 
 ## Contributing
