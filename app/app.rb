@@ -19,11 +19,11 @@ class App
     end
 
     def welcome
-        puts "Welcome to the DogFact!\n Do you want to learn some Dog facts?"
+        puts "Welcome to the DogFact!\nDo you want to learn some Dog facts?".blue
         sleep(0.9)
-        puts "Get it"
+        puts "Get it".blue
         sleep(0.6)
-        puts "Lets get started"
+        puts "Lets get started".blue
         sleep(0.3)
     end
 
@@ -32,9 +32,9 @@ class App
         @username = gets.chomp
         reinitiate_user
         if (@user)
-            puts "Oh hi #{@username}! Long time no see!"
+            puts "Oh hi #{@username}! Long time no see!".green
         else
-            puts "I see. You new here! Welcome #{@username}!"
+            puts "I see. You new here! Welcome #{@username}!".green
             @user = User.create(name: @username)
         end
     end
@@ -44,7 +44,7 @@ class App
         reinitiate_user
         if(@user.facts.size != 0)
             @user.facts.each_with_index do |fact, index|
-                puts "#{index+1}. #{@user.facts[index].fact}"
+                puts "#{index+1}. #{@user.facts[index].fact}".blue
             end
         else
             puts " - No facts, that you favor. For now ;)"
@@ -81,7 +81,7 @@ class App
     end
     def load_favorites
         wanna_see_fav
-        puts "Do you want to delete any of them? (y/n)"
+        puts "Do you want to delete any of them? (y/n)".red
         @answer = gets.chomp
         while (@answer == 'y')
             puts "Which one of them you want to delete? (pick a number)"
@@ -92,11 +92,11 @@ class App
                 Fact.all.find_by(fact: delete_fact).destroy
                 wanna_see_fav
             else
-                puts "Sorry. Such fact is non-existent. Pick another one"
+                puts "Sorry. Such fact is non-existent. Pick another one".red
                 @answer = 'n'
             end
             if (@user.facts.size != 0)
-                puts "Do you still want to delete one of your favorite facts? (y/n)"
+                puts "Do you still want to delete one of your favorite facts? (y/n)".red
                 @answer = gets.chomp
             end
         end
@@ -108,13 +108,12 @@ class App
 
     def exit
         @exit = "none"
-        while (@exit != 'y' && @exit != 'n')
-            puts "Do you want to exit? (y/n)"
+        puts "Do you want to exit? (y/n)".red
+        @exit = gets.chomp
+        while (@exit != 'y')
+            browse
+            puts "Do you want to exit? (y/n)".red
             @exit = gets.chomp
-            if (@exit == "n")
-                puts "Do you want to re-login? (y/n)"
-                @stay = gets.chomp
-            end
             if (@exit != 'n' && @exit != 'y' && @stay != 'y')
                 puts "No such option exist."
                 puts "(@exit != 'y' && @exit != 'n'): #{(@exit != 'y' && @exit != 'n')}"

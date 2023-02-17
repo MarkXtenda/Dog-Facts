@@ -21,7 +21,7 @@ class GetFacts
         fact_json = JSON.parse(self.get_facts)
         fact_json["facts"].each_with_index do |fact, index|
             @all_facts << fact_json["facts"][index]
-            puts "#{index+1}. #{fact_json["facts"][index]}"
+            puts "#{index+1}. #{fact_json["facts"][index]}".blue
         end
     end
 
@@ -43,9 +43,9 @@ class GetFacts
             if (number > 0 && number < 6)
                 @favorite_fact = @all_facts[number-1]
                 puts "You saved the fact number: #{number}"
-                puts "#{@favorite_fact}"
+                puts "#{@favorite_fact}".blue
             else
-                puts "Wrong number. No facts has been added."
+                puts "Wrong number. No facts has been added.".red
                 "none"
             end
         end

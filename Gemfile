@@ -8,6 +8,7 @@ source "https://rubygems.org"
 gem 'require_all'
 gem 'sqlite3'
 gem 'activerecord'
+gem 'colorize'
 gem "rake", "~> 13.0"
 gem 'pry'
 
