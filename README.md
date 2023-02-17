@@ -1,5 +1,6 @@
 # DogFacts CLI Application
 This CLI Ruby application fetches 5 random dog facts from the DogFacts API and allows the user to save any of these facts as their favourites for later reading.
+
 Here is a link where I explain the various steps of my development process and how I created this application: https://medium.com/@mark.zapas1/how-to-create-ruby-cli-application-cec525391baf
 
 ## Features
